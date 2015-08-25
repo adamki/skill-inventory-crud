@@ -1,0 +1,17 @@
+* {
+  font-weight: lighter;
+}
+.page-header{
+  text-align: center;
+  background-color: #3F51B5;
+
+}
+.page-header h1 {
+  color: white;
+  margin-top: 0px;
+  font-weight: lighter;
+
+}
+a {
+  text-decoration: none;
+}

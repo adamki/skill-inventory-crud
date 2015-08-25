@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css">
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="/application.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <title>Skill Inventory</title>
 </head>
+
 <body>
-  <%= yield %>
+  <div class="container">
+    <div class="page-header">
+      <h1>Welcome to the Skills Manager </h1>
+    </div>
+
+    <div class = 'row'>
+      <div class="well well-lg">
+        <%= yield %>
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>
