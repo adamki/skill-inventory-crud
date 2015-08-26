@@ -1,16 +1,6 @@
 ---
 skills:
-- id: 1
-  skill: fd
-  description: fd
-- id: 2
-  skill: dfghj
-  description: fdgghjk
-- id: 3
-  skill: haircut
-  description: tight
-- id: 4
-  skill: bowling
-  description: whaaARRRR?
-  title: bowling
-total: 4
+- id: 0
+  skill: communications
+  description: I always communicate
+total: 0
