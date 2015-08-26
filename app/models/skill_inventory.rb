@@ -37,10 +37,11 @@ class SkillInventory
   def self.update(id, skill)
     database.transaction do
       target = database['skills'].find {|data| data["id"] == id}
-      target["title"] = skill[:title]
+      target["skill"] = skill[:title]
       target["description"] = skill[:description]
     end
   end
+
 
   def self.delete(id)
     database.transaction do
