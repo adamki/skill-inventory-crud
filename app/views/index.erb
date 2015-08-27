@@ -1,4 +1,4 @@
-<h3>Current Skills</h3>
+<!-- <h3>Current Skills</h3>
 
 <% @skills.each do |skill| %>
 <div class="col-md-4">
@@ -21,4 +21,13 @@
     </div>
   </div>
 </div>
+<% end %> -->
+
+<% @skills.each do |skill| %>
+  <h3><%= skill.id %> <a href="/skills/<%= skill.id %>"><%=skill.title%></a></h3>
+  <a href="/skills/<%= skill.id %>/edit" id= "Edit">Edit</a>
+  <form action="/skills/<%=skill.id%>" method="POST">
+    <input type="hidden" name = "_method" value = "DELETE">
+    <input type="submit" value="delete/">
+  </form>
 <% end %>
