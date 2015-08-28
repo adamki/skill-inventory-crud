@@ -1,12 +1,12 @@
 class Skill
 
-  attr_reader :title,
-              :description,
-              :id
+  attr_accessor :title,
+                :description,
+                :id
 
   def initialize(data)
-    @id          = data["id"]
-    @title       = data["skill"]
-    @description = data["description"]
+    @id          = data[:id]
+    @title       = data[:title]
+    @description = data[:description]
   end
 end

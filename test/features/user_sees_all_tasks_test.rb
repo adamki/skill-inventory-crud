@@ -2,14 +2,12 @@ require_relative '../test_helper'
 
 class UserSeesAllTasksTests < FeatureTest
 
-  def test_that_root_dir_is_correct
-    visit '/'
-    assert_equal '/', current_path
-  end
 
   def test_front_page_has_welcome_content
     visit '/'
     assert page.has_content?("Welcome to Skill Inventory")
+    assert page.has_content?("View Skills")
+    assert page.has_content?("Add a New Skill")
   end
 
   def test_front_page_has_welcome_content_2
@@ -19,7 +17,15 @@ class UserSeesAllTasksTests < FeatureTest
     end
   end
 
-  def test_it_can_create_a_new_task
+  def test_home_page_renders_with_css
+    visit("/")
+    assert page.has_css?("body", "html")
+    within(".container") do
+      assert page.has_content?("Task Index")
+    end
+  end
+
+  def test_it_can_create_a_new_skill
     visit '/'
     click_link "Add a New Skill"
     fill_in "skill[title]", with: "Ruby"
@@ -29,7 +35,7 @@ class UserSeesAllTasksTests < FeatureTest
     assert page.has_content?("Ruby")
   end
 
-  def test_it_can_edit_a_task
+  def test_it_can_edit_a_skill
     visit '/'
     click_link "Add a New Skill"
     fill_in "skill[title]", with: "Ruby"
@@ -42,7 +48,7 @@ class UserSeesAllTasksTests < FeatureTest
     assert page.has_content?("Javascript")
   end
 
-  def test_it_can_delete_a_task
+  def test_it_can_delete_a_skill
     visit '/'
     click_link "Add a New Skill"
     fill_in "skill[title]", with: "Ruby"

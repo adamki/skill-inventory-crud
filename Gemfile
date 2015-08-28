@@ -7,3 +7,5 @@ gem 'pry'
 
 gem 'capybara'
 gem 'launchy'
+gem 'sequel'
+gem 'sqlite3'
