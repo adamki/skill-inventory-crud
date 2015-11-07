@@ -1,5 +1,4 @@
 class Skill
-
   attr_accessor :title,
                 :description,
                 :id

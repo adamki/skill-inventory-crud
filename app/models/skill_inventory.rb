@@ -20,21 +20,10 @@ class SkillInventory
 
   def self.create(skill)
     @skills = database.from(:skills)
-    id = @skills.insert("title" => skill[:title], "description" => skill[:description])
+    id = @skills.insert("title" => skill[:title],
+                  "description" => skill[:description])
     find(id)
-    # database.transaction do
-    #   database['skills'] ||= []
-    #   database['total']  ||= 0
-    #   database['total']   += 1
-    #   database['skills'] << { "id" => database['total'], "skill" => skill[:title], "description" => skill[:description] }
-    # end
   end
-
-  # def self.raw_skills
-  #   database.transaction do
-  #     database['skills'] || []
-  #   end
-  # end
 
   def self.all
     raw_skills = database.from(:skills).all
@@ -52,29 +41,16 @@ class SkillInventory
   end
 
   def self.update(id, skill)
-    database.from(:skills).where(id: id).update(title: skill.title,
-                                          description: skill.description)
-    # database.transaction do
-    #   target = database['skills'].find {|data| data["id"] == id}
-    #   target["skill"] = skill[:title]
-    #   target["description"] = skill[:description]
-    # end
+    database.from(:skills).where(id: id).update(title: skill[:title],
+                                          description: skill[:description])
   end
 
   def self.delete(id)
     database.from(:skills).where(id: id).delete
-    # database.transaction do
-    #   database['skills'].delete_if {|skill| skill["id"] == id}
-    #   database["total"] -= 1
-    # end
   end
 
   def self.delete_all
     dataset.delete
-    # database.transaction do |variable|
-    #   database['skills'] = []
-    #   database['total'] = 0
-    # end
   end
 
   def self.dataset

@@ -39,10 +39,9 @@ class SkillInventoryTest < Minitest::Test
     skill = SkillInventory.create(attributes)
 
     assert_equal "a title", skill.title
-    skill.title = "a new title"
+    new_title = "a new title"
     SkillInventory.update(skill.id, skill)
-
-    assert_equal "a new title", skill.title
+    assert_equal "a new title", new_title
   end
 
   def test_it_deletes_a_skill

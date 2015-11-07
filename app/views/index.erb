@@ -1,27 +1,4 @@
-<!-- <h3>Current Skills</h3>
 
-<% @skills.each do |skill| %>
-<div class="col-md-4">
-
-    <form action="/skills/<%=skill.id%>" method="POST">
-      <input type="hidden" name = "_method" value = "DELETE">
-      <input type="submit" value="delete">
-    </form>
-
-
-  <div class="demo-card-event mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title mdl-card--expand">
-      <h3> <a href="/skills/<%= skill.id %>"><%= skill.title %></a></h3>
-    </div>
-    <div class="mdl-card__actions mdl-card--border">
-      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="/skills/<%= skill.id %>/edit">Edit</a>
-      <div class="mdl-layout-spacer"></div>
-      <i class="material-icons">delete
-      </i>
-    </div>
-  </div>
-</div>
-<% end %> -->
 
 <% @skills.each do |skill| %>
   <h3><%= skill.id %> <a href="/skills/<%= skill.id %>"><%=skill.title%></a></h3>
